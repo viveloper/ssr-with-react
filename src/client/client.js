@@ -9,7 +9,8 @@ import reducer from './modules';
 import { renderRoutes } from 'react-router-config';
 import Routes from './Routes';
 
-const store = createStore(reducer, {}, applyMiddleware(thunk));
+const initialState = JSON.parse(window.INITIAL_STATE);
+const store = createStore(reducer, initialState, applyMiddleware(thunk));
 
 ReactDOM.hydrate(
   <Provider store={store}>
