@@ -31,4 +31,8 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+export function loadData(store) {
+  return store.dispatch(fetchUsers());
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
